@@ -1122,7 +1122,9 @@ public class BaseTextExportImportContentProcessor
 			FileEntry fileEntry = getFileEntry(dlReferenceParameters);
 
 			if (fileEntry == null) {
-				throw new NoSuchFileEntryException();
+				throw new NoSuchFileEntryException(
+					"File entry reference parameters: " +
+						MapUtil.toString(dlReferenceParameters));
 			}
 
 			endPos = beginPos - 1;
